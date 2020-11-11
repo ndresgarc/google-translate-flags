@@ -1,0 +1,25 @@
+{
+  "name": "google-translate-flags",
+  "version": "1.0.0",
+  "description": "Web Extension to add flags to Google Translate language selection",
+  "main": "getLanguageList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndresgarc/google-translate-flags.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndresgarc/google-translate-flags/issues"
+  },
+  "homepage": "https://github.com/ndresgarc/google-translate-flags#readme",
+  "dependencies": {
+    "flat-flags": "^1.0.0",
+    "less": "^3.12.2"
+  }
+}
