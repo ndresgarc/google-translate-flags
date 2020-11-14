@@ -1,5 +1,5 @@
 # google-translate-flags
-Web Extension to add flags to Google Translate language selection
+Web Extension to add flag icons to Google Translate language selection
 
 ## Build
 
@@ -7,7 +7,7 @@ Getting the language list
 
 Visit translate.google.com and run the following code in console
 
-```
+```js
 languages = [];
 document.querySelectorAll('.language_list_item_wrapper').forEach((item)=>{
   console.log()
@@ -24,7 +24,7 @@ document.querySelectorAll('.language_list_item_wrapper').forEach((item)=>{
 console.log([...new Set(languages)].join(','));
 ```
 
-## Build
+Preprocess **less** files
 
 ```
 lessc inject.less
@@ -35,3 +35,6 @@ lessc inject.less
 https://github.com/wobblecode/flat-flags
 
 Original image flags from https://dribbble.com/shots/1211759-Free-195-Flat-Flags
+
+List of languages:
+http://www.ethnologue.com/sites/default/files/LanguageCodes.tab

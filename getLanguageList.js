@@ -11,4 +11,5 @@ document.querySelectorAll('.language_list_item_wrapper').forEach((item)=>{
     })
 })
 
-console.log([...new Set(languages)].join(','));
+console.log('Language list >');
+console.log([...new Set(languages)].sort().join(','));

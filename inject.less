@@ -5,25 +5,22 @@
     opacity: 1;
 }
 
-@languages: 
-    af,
-    sq,
-    am,
-    de,
-    ar,
-    hy,
-    az,
-    bn,be,my,bs,bg,km,kn,ca,ceb,cs,ny,zh,si,ko,co,ht,hr,da,sk,sl,en,eo,es,et,eu,fi,fr,fy,gd,cy,gl,ka,el,gu,ha,haw,iw,hi,hmn,hu,ig,id,ga,is,it,ja,jw,kk,rw,ky,ku,lo,la,lv,lt,lb,mk,ml,ms,mg,mt,mi,mr,mn,nl,ne,no,or,pa,ps,fa,pl,pt,ro,ru,sm,sr,st,sn,sd,so,sw,sv,su,tl,th,ta,tt,tg,te,tr,tk,uk,ug,ur,uz,vi,xh,yi,yo,zu;
- 
-    @length : length(@languages);
+@languages: af,am,ar,az,be,bg,bn,bs,ca,ceb,co,cs,cy,da,de,el,en,eo,es,et,eu,fa,fi,fr,fy,ga,gd,gl,gu,ha,haw,hi,hmn,hr,ht,hu,hy,id,ig,is,it,iw,ja,jw,ka,kk,km,kn,ko,ku,ky,la,lb,lo,lt,lv,mg,mi,mk,ml,mn,mr,ms,mt,my,ne,nl,no,ny,or,pa,pl,ps,pt,ro,ru,rw,sd,si,sk,sl,sm,sn,so,sq,sr,st,su,sv,sw,ta,te,tg,th,tk,tl,tr,tt,ug,uk,ur,uz,vi,xh,yi,yo,zh,zu;
+
+@length: length(@languages);
 
 @plugin "less-uppercase";
 .flags(@languages; @index) when (@index > 0) {
-    .flags(@languages; (@index - 1)); // decrement.
+
+    .flags(@languages; (@index - 1)); // decrement. 
+    
     @language: extract(@languages, @index);
-    @LANGUAGE: uppercase(@language);
+ 
+    @plugin "less-language-to-country";
+    @country: languageToCountry(@language); 
+
     .language_list_item_wrapper-@{language} .language_list_item_icon {
-        background-image: url('images/@{LANGUAGE}.png') !important;
+        background-image: url('images/@{country}.png') !important;
     }
 }
 
