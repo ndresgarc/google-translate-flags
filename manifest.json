@@ -9,7 +9,10 @@
             "*://translate.google.com/*",
             "*://translate.google.es/*"
           ],
-          "css": ["inject.css"]
+
+          "css": [
+            "inject.css"
+          ]
         }
       ]
   }

@@ -21,5 +21,8 @@
   "dependencies": {
     "flat-flags": "^1.0.0",
     "less": "^3.12.2"
+  },
+  "devDependencies": {
+    "axios": "^0.21.0"
   }
 }
