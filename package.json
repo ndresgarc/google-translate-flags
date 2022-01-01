@@ -5,7 +5,7 @@
   "main": "getLanguageList.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": ""
+    "less": "lessc inject.less inject.css"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,7 @@
   "homepage": "https://github.com/ndresgarc/google-translate-flags#readme",
   "dependencies": {
     "flat-flags": "^1.0.0",
-    "less": "^3.12.2"
+    "less": "^3.13.1"
   },
-  "devDependencies": {
-    "axios": "^0.21.0"
-  }
+  "devDependencies": {}
 }

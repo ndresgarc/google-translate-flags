@@ -1,13 +1,15 @@
 
-.language_list_item_wrapper .language_list_item_icon {
-    background-size: contain !important;
-    background-repeat: no-repeat;
-    opacity: 1;
+[data-language-code] {
+
+    i[class*="material-icons"] {
+        display: none !important;
+    }
+
 }
 
-@languages: af,am,ar,az,be,bg,bn,bs,ca,ceb,co,cs,cy,da,de,el,en,eo,es,et,eu,fa,fi,fr,fy,ga,gd,gl,gu,ha,haw,hi,hmn,hr,ht,hu,hy,id,ig,is,it,iw,ja,jw,ka,kk,km,kn,ko,ku,ky,la,lb,lo,lt,lv,mg,mi,mk,ml,mn,mr,ms,mt,my,ne,nl,no,ny,or,pa,pl,ps,pt,ro,ru,rw,sd,si,sk,sl,sm,sn,so,sq,sr,st,su,sv,sw,ta,te,tg,th,tk,tl,tr,tt,ug,uk,ur,uz,vi,xh,yi,yo,zh,zu;
 
-@length: length(@languages); 
+@languages: af,am,ar,az,be,bg,bn,bs,ca,ceb,co,cs,cy,da,de,el,en,eo,es,et,eu,fa,fi,fr,fy,ga,gd,gl,gu,ha,haw,hi,hmn,hr,ht,hu,hy,id,ig,is,it,iw,ja,jw,ka,kk,km,kn,ko,ku,ky,la,lb,lo,lt,lv,mg,mi,mk,ml,mn,mr,ms,mt,my,ne,nl,no,ny,or,pa,pl,ps,pt,ro,ru,rw,sd,si,sk,sl,sm,sn,so,sq,sr,st,su,sv,sw,ta,te,tg,th,tk,tl,tr,tt,ug,uk,ur,uz,vi,xh,yi,yo,zh,zu;
+@enabled-languages: da, en, es, fi, fr, ja, lt, pl, pt, ro, sv;
 
 .flags(@languages; @index) when (@index > 0) {
 
@@ -18,9 +20,22 @@
     @plugin "less-language-to-country";
     @country: languageToCountry(@language); 
 
-    .language_list_item_wrapper-@{language} .language_list_item_icon {
-        background-image: url('images/@{country}.png') !important;
+    [data-language-code="@{language}"] {
+
+        background: #eeeeee;
+
+        div:first-child::after {
+            content: " ";
+            display: inline-block;
+            width: 100%;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: data-uri("images/@{country}.png");
+            background-position: 0 3.25px;        
+        }
+
     }
 }
 
-.flags(@languages, @length);
+.flags(@enabled-languages, length(@enabled-languages));
