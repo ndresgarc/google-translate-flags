@@ -12,32 +12,16 @@ However, I consider that using them in a big selection menu with a lot of items 
 
 ## Build
 
-Getting the language list
-
-Visit translate.google.com and run the following code in console
-
-```js
-languages = [];
-document.querySelectorAll('.language_list_item_wrapper').forEach((item)=>{
-  console.log()
-    item.className.split(' ').forEach((className) => {
-        if (
-            className.indexOf('language_list_item_wrapper-') > -1
-            && className.indexOf('auto') == -1
-        ) {
-            languages.push(className.split('-')[1]);
-        } 
-    })
-})
-
-console.log([...new Set(languages)].join(','));
-```
-
-Preprocess **less** files
+Compile LESS into CSS by using NPM
 
 ```
-lessc inject.less
+npm run less
 ```
+
+## Changelog
+
++ 1.0.1: Fix CSS selectors after Google Translate UI update to Material Design
++ 1.0.2: Update to Web Extension manifest v3
 
 ## Resources
 

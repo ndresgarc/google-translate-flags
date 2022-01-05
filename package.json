@@ -1,6 +1,6 @@
 {
   "name": "google-translate-flags",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web Extension to add flags to Google Translate language selection",
   "main": "getLanguageList.js",
   "scripts": {
